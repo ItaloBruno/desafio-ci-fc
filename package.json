@@ -1,0 +1,24 @@
+{
+  "name": "desafio-ci-fc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItaloBruno/desafio-ci-fc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ItaloBruno/desafio-ci-fc/issues"
+  },
+  "homepage": "https://github.com/ItaloBruno/desafio-ci-fc#readme",
+  "dependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.0.5",
+    "sonar-scanner": "^3.1.0"
+  }
+}
