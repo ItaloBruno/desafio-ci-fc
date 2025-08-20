@@ -1,0 +1,26 @@
+name: ci-workflow
+on: 
+  pull_request:
+    branches:
+      - develop
+    types: [opened, synchronize, reopened]
+
+jobs:
+  check-application:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setando ambiente do node versão 22.18.0
+        uses: actions/setup-node@v4
+        with:
+          node-version: v22.18
+          cache: 'npm'
+      - run: npm ci 
+      - run: npm run build --if-present
+      - run: npm test
+
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
